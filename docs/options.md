@@ -327,6 +327,11 @@ Valid options:
 - `"lwc"` (same parser as `"html"`, but also formats LWC-specific syntax for unquoted template attributes) _First available in 1.17.0_
 - `"mjml"` (same parser as `"html"`, but also formats MJML-specific syntax) _First available in 3.6.0_
 - `"glimmer"` (Ember / Handlebars, via [@glimmer/syntax](https://github.com/glimmerjs/glimmer-vm/tree/main/packages/%40glimmer/syntax)) _First available in 1.10.0_
+
+:::warning
+The Markdown parser does not recognize single-dollar delimiters (`$...$`) as inline math. Prettier disables this syntax to avoid treating ordinary dollar signs in prose as math, so the contents are formatted as regular Markdown and may change. Use double-dollar delimiters (`$$...$$`) when you need Markdown math syntax, and check how your other Markdown tools interpret those delimiters.
+:::
+
 - `"yaml"` (via [yaml](https://github.com/eemeli/yaml) and [yaml-unist-parser](https://github.com/ikatyang/yaml-unist-parser)) _First available in 1.14.0_
 
 | Default | CLI Override        | API Override         |
